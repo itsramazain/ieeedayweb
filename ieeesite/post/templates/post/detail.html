@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <link rel="stylesheet" href="{% static 'css/aboutme.css' %}">
+  <body>
+    <div class="headercontext">
+      <img id='day' src="{% static 'img/ieeeday.png' %}" >
+      <div class="banner">
+        <p id='logo'>IEEE</p>
+        <p id="date">Day 2022</p>
+
+      </div>
+      <ul class="items">
+        <li class="item"><a class='itemlink' href="{% url 'home' %}">IEEE DAY</a></li
+        <li class="item"><a class='itemlink' href="{% url 'post:list'%}">LEAVE A MESSAGE</a></li>
+        <li class="item"><a class='itemlink' href="{% url 'vote:vote2' %}">VOTE</a></li>
+        {% if user.is_authenticated %}
+        <li class="item"><a class='itemlink' href="{% url 'accounts:logout' %}">logout</a></li>
+        {% else %}
+        <li class="item"><a  class='itemlink' href="{% url 'accounts:login' %}">LOG IN</a></li>
+        <li class="item"><a class='itemlink' href="{% url 'accounts:signup' %}">SIGN UP</a></li>
+        {% endif %}
+      </ul>
+
+      </div>
+    <h1>about the writer:</h1>
+    <div class="info">
+    <p class="name">name : {{witer.author.first_name}}</p>
+    <p class="username">username : {{witer.author.username}}</p>
+    <p class="rate">{{witer.author.first_name}} rated us :</p>
+    <p class="star">{{witer.stars.rate}}</p>
+    <p class="stat">status : {{witer.group.group}}</p>
+    <p class="postion">position : {{witer.position}}</p>
+    <p class="so">socity : {{witer.to.socity}}</p>
+    <p class="wrote">{{witer.author.first_name}} wrote : {{witer.massege}}</p>
+    <p class='time'>posted on : {{witer.time}}</p>
+    </div>
+  </body>
+</html>

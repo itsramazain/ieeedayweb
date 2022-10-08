@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/ieeeday.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <div class="headercontext">
+      <img id='day' src="{% static 'img/ieeeday.png' %}" >
+      <div class="banner">
+        <p id='logo'>IEEE</p>
+        <p id="date">Day 2022</p>
+
+      </div>
+      <ul class="items">
+        <li class="item"><a class='itemlink' href="{% url 'home' %}">IEEE DAY</a></li
+        <li class="item"><a class='itemlink' href="{% url 'post:list'%}">LEAVE A MESSAGE</a></li>
+        {% if user.is_authenticated %}
+        <li class="item"><a class='itemlink' href="{% url 'accounts:logout' %}">logout</a></li>
+        {% else %}
+        <li class="item"><a  class='itemlink' href="{% url 'accounts:login' %}">LOG IN</a></li>
+        <li class="item"><a class='itemlink' href="{% url 'accounts:signup' %}">SIGN UP</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <h1>you are logged in </h1>
+  </body>
+</html>

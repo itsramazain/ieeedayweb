@@ -1,0 +1,209 @@
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.itemlink:visited{
+  color:#1e629b;
+}
+
+.items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 200px;
+  z-index: 9;
+}
+.item{
+  color:#1e629b;
+  margin: 50px;
+  transition-duration: 300ms;
+  transition-property: color;
+  transition-timing-function: ease-in-out;
+}
+
+.itemlink:hover{
+  color:rgb(242, 140, 40);
+}
+#day{
+  width:90px;
+  height: 90px;
+  position: absolute;
+  left: 50px;
+}
+#logo{
+  position: absolute;
+  left:170px;
+  top:35px;
+  color: #1e629b;
+  font-weight: bold;
+  font-size: 25px
+}
+#date{
+    position: absolute;
+    left:240px;
+    top:40px;
+    color: #1e629b;
+    font-size: 20px;
+}
+
+
+/*cool*/
+$blue: #3676e8;
+
+// animations
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*posts*/
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+
+
+#create {
+  position: absolute;
+  top:200px;
+  left: 550px;
+  float:left;
+  padding:25px 25px 40px;
+  margin:30 20px 20px 30;
+  width:250px;
+  height:250px;
+  overflow-y: hidden;
+
+}
+
+
+#create {
+
+  user-select:none;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+  border:15px solid rgba(0,0,0,0.1);
+  cursor:pointer;
+  color:rgba(0,0,0,0.1);
+  font:220px "Helvetica", sans-serif;
+  line-height:185px
+}
+
+#create:hover { border-color:rgba(0,0,0,0.2); color:rgba(0,0,0,0.2); }
+#title{
+  position: absolute;
+  font-size: 30px;
+  left:500px;
+
+}
+
+.newpost{
+  position: absolute;
+  top:550px;
+  z-index: 9;
+  margin-left: 150px;
+
+
+}
+
+.postcontent{
+  margin-bottom: 50px;
+  float:left;
+ padding:25px 25px 40px;
+ margin:0 20px 20px 0;
+ width:250px;
+ height:250px;
+ box-shadow:0 4px 6px rgba(0,0,0,0.5);
+  overflow:hidden;
+  max-width:520px;
+  max-height:250px;
+  background-color:#1e629b ;
+  color: white;
+  font:20px 'Gloria Hallelujah', cursive;
+  line-height:1.5;
+  border:0;
+  border-radius:3px;
+  box-shadow:0 4px 6px rgba(0,0,0,0.5);
+  overflow:hidden;
+  transition:box-shadow 0.5s ease;
+  font-smoothing:subpixel-antialiased;
+  max-width:520px;
+  max-height:250px;
+  overflow-y: scroll;
+}
+.postcontent::-webkit-scrollbar{
+  width:0.5em;
+}
+.postcontent::-webkit-track{
+  background-color: rgb(0,0,0,0.3)
+}
+
+.about{
+  overflow-y: hidden;
+}
+.aboutlink{
+  color:white;
+}
+.aboutlink:visited{
+  color:white;
+}
+.sent{
+  margin-bottom: 50px;
+}
+@media (max-width:1000px){
+  .item{
+    margin: 0;
+    padding: 20px;
+
+  }
+  .items{
+    margin-left: 300px;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  #day{
+    left:25px;
+    top:25px;
+  }
+  #logo{
+    left:130px;
+    top:45px;
+  }
+  #date{
+    left:200px;
+    top:50px;
+  }
+  #create{
+    left: 400px;
+  }
+  #title{
+    left:350px;
+  }
+
+}

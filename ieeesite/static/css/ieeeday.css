@@ -1,0 +1,204 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.itemlink:visited{
+  color:#1e629b;
+}
+
+.items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 200px;
+  z-index: 9;
+}
+.item{
+  color:#1e629b;
+  margin: 50px;
+  transition-duration: 300ms;
+  transition-property: color;
+  transition-timing-function: ease-in-out;
+}
+
+.itemlink:hover{
+  color:rgb(242, 140, 40);
+}
+#day{
+  width:90px;
+  height: 90px;
+  position: absolute;
+  left: 50px;
+}
+#logo{
+  position: absolute;
+  left:170px;
+  top:35px;
+  color: #1e629b;
+  font-weight: bold;
+  font-size: 25px
+}
+#date{
+    position: absolute;
+    left:240px;
+    top:40px;
+    color: #1e629b;
+    font-size: 20px;
+}
+
+.anime{
+  position: absolute;
+  right:300px;
+  top:100px;
+}
+.anime2{
+  position: absolute;
+  left:300px;
+  top:100px;
+}
+#back{
+  position: absolute;
+  top:180px;
+  left:500px;
+}
+#lion{
+  color:rgb(242, 140, 40);
+  position: absolute;
+  top:600px;
+  font-weight: bold;
+  left:570px;
+}
+
+#hudate{
+  font-weight: bold;
+  margin-left: 560px;
+  font-size: 25px;
+  margin-bottom: 100px;
+}
+#map{
+  position: absolute;
+  right: 100px;
+  top:700px;
+  width:500px;
+  height: 400px;
+  z-index: 1000;
+
+}
+#p1{
+  position: absolute;
+  top:850px;
+  left:50px ;
+
+}
+#p2{
+  position: absolute;
+  top:1200px;
+  left:50px;
+  font-size: 30px;
+}
+#p0{
+  position: absolute;
+  top:800px;
+  left:50px;
+  font-size:30px ;
+}
+
+/*cool*/
+
+
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+.circuit-no-fill,
+.circuits,
+.circuit-top-group {
+  margin: 20px;
+  width: 100px;
+}
+
+
+
+.circuit-no-fill {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 2px;
+  stroke-miterlimit: 10;
+
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-name: dash;
+  animation-timing-function: ease-in-out;
+}
+
+.circuit-bottom-group {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+  width: 135px;
+}
+
+.circuit-top-group {
+  fill: none;
+  stroke-width: 2px;
+  width: 115px;
+}
+@media (max-width:1000px){
+  .item{
+    margin: 0;
+    padding: 30px;
+
+  }
+  .items{
+    margin-left: 300px;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  #day{
+    left:25px;
+    top:25px;
+  }
+  #logo{
+    left:130px;
+    top:45px;
+  }
+  #date{
+    left:200px;
+    top:50px;
+  }
+}

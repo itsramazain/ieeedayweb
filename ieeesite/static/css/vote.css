@@ -1,0 +1,304 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.itemlink:visited{
+  color:#1e629b;
+}
+
+.items{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 200px;
+  z-index: 9;
+}
+.item{
+  color:#1e629b;
+  margin: 50px;
+  transition-duration: 300ms;
+  transition-property: color;
+  transition-timing-function: ease-in-out;
+}
+
+.itemlink:hover{
+  color:rgb(242, 140, 40);
+}
+#day{
+  width:90px;
+  height: 90px;
+  position: absolute;
+  left: 50px;
+}
+#logo{
+  position: absolute;
+  left:170px;
+  top:35px;
+  color: #1e629b;
+  font-weight: bold;
+  font-size: 25px
+}
+#date{
+    position: absolute;
+    left:240px;
+    top:40px;
+    color: #1e629b;
+    font-size: 20px;
+}
+
+
+/*vote*/
+html, body{
+  min-height: 100%;
+}
+
+body{
+  background-color: white;
+  margin: 0;
+  animation: votedbackground 10s infinite;
+}
+
+.box{
+  position:absolute;
+  height: 35vh;
+  width: 50vh;
+  background-color: #669999;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  box-shadow: 7vh -7vh #476b6b;
+}
+
+/*top left corner of the box*/
+.box:after{
+  position: absolute;
+  content: "";
+  width:0;
+  height:0;
+  border-bottom: 4vh solid #476b6b;
+  border-right: 3.5vh solid #476b6b;
+  border-top: 3.15vh solid transparent;
+  border-left: 3.8vh solid transparent;
+  top:-7vh;
+  z-index:-1;
+}
+
+/*bottom right corner of the box*/
+.box:before{
+  position: absolute;
+  content: "";
+  width:0;
+  height:0;
+  border-top: 7.1vh solid #476b6b;
+  border-left: 7.1vh solid #476b6b;
+  bottom:0vh;
+  right:-6.95vh;
+  z-index:-1;
+}
+
+.opening{
+  width: 20vh;
+  height: 2vh;
+  background-color: #1f2e2e;
+  border-radius: 30px;
+  position:absolute;
+  top:-5vh;
+  left: 20vh;
+}
+
+.ballot{
+  background-color: white;
+  height: 15vh;
+  width: 32vh;
+  position: absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  top:30vh;
+  display:flex;
+  border:1vh solid #f9f2ec;
+  z-index:1;
+  animation: voted 10s infinite;
+}
+
+.letter{
+  height: 100%;
+  width: 25%;
+  background: linear-gradient(to bottom, orange 33%, white 33%, white 66%, blue 66%);
+}
+
+/*the bottom*/
+#v:after{
+  position:absolute;
+  content: "";
+  border-left: 4.1vh solid #f9f2ec;
+  border-right: 4vh solid #f9f2ec;
+  border-top: 15vh solid transparent;
+  bottom:0;
+  top:0;
+}
+
+/*the top side*/
+#v:before{
+  position:absolute;
+  content: "";
+  border-left: 2vh solid transparent;
+  border-bottom: 7.5vh solid tranparent;
+  border-right: 2vh solid transparent;
+  border-top: 7.5vh solid #f9f2ec;
+  left:2vh;
+}
+
+#o{
+  border-radius:50%;
+}
+
+/*inner circle*/
+#o:after{
+  position:absolute;
+  content:"";
+  border-radius:50%;
+  height: 10vh;
+  width: 4vh;
+  background:#f9f2ec;
+  top:3vh;
+  left:10vh;
+}
+
+/*left side*/
+#t:before{
+  position:absolute;
+  content:"";
+  width:2.5vh;
+  height:12vh;
+  background:#f9f2ec;
+  bottom:0;
+}
+
+/*right side*/
+#t:after{
+  position:absolute;
+  content:"";
+  width:2.5vh;
+  height:12vh;
+  background:#f9f2ec;
+  right:8vh;
+  bottom:0;
+}
+
+/*bottom*/
+#e:before{
+  position:absolute;
+  content:"";
+  width:5vh;
+  height:3vh;
+  background:#f9f2ec;
+  bottom:3vh;
+  right:0;
+}
+
+/*top*/
+#e:after{
+  position:absolute;
+  content:"";
+  width:5vh;
+  height:3vh;
+  background:#f9f2ec;
+  top:3vh;
+  right:0;
+}
+
+/*------ANIMATION-----*/
+/*removes the animation and restarts it*/
+
+.ballot:active {
+  animation: none;
+  transform: translate(0%);
+}
+
+@keyframes voted{
+  0%{
+    top:0vh;
+  }
+  25%{
+    clip: rect(0vh,34vh,17vh,0vh);
+  }
+  50%{
+    transform: translateY(12vh) translateX(5vh) rotate(90deg);
+    clip: rect(0vh,34vh,17vh,0vh);
+  }
+  100%{
+    transform: translateY(40vh) translateX(5vh) rotate(90deg);
+    clip: rect(0vh,0vh,17vh,0vh);
+  }
+}
+
+@keyframes votedbackground{
+
+  100%{
+    background: white;
+  }
+}
+
+
+#qe{
+  margin-left: 300px;
+}
+input{
+  margin: 20px;
+}
+
+
+
+form{
+  position: absolute;
+  top:170px;
+  left: 300px;
+  z-index: 1000;
+
+}
+@media (max-width:1000px){
+  .item{
+    margin: 0;
+    padding: 30px;
+
+  }
+  .items{
+    margin-left: 300px;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  #day{
+    left:25px;
+    top:25px;
+  }
+  #logo{
+    left:130px;
+    top:45px;
+  }
+  #date{
+    left:200px;
+    top:50px;
+  }
+  #qe{
+    margin-top: 100px;
+
+  }
+  form{
+    position: absolute;
+    top:300px;
+  }
+  label{
+    font-size: 20px;
+  }
+  .done{
+    font-size: 26px
+  }
+
+}

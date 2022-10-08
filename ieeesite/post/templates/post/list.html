@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <link rel="stylesheet" href="{% static 'css/massege.css' %}">
+  <body>
+    <div class="headercontext">
+      <img id='day' src="{% static 'img/ieeeday.png' %}" >
+      <div class="banner">
+        <p id='logo'>IEEE</p>
+        <p id="date">Day 2022</p>
+
+      </div>
+      <ul class="items">
+        <li class="item"><a class='itemlink' href="{% url 'home' %}">IEEE DAY</a></li
+        <li class="item"><a class='itemlink' href="{% url 'post:list'%}">LEAVE A MESSAGE</a></li>
+        <li class="item"><a class='itemlink' href="{% url 'vote:vote2' %}">VOTE</a></li>
+        {% if user.is_authenticated %}
+        <li class="item"><a class='itemlink' href="{% url 'accounts:logout' %}">logout</a></li>
+        {% else %}
+        <li class="item"><a  class='itemlink' href="{% url 'accounts:login' %}">LOG IN</a></li>
+        <li class="item"><a class='itemlink' href="{% url 'accounts:signup' %}">SIGN UP</a></li>
+        {% endif %}
+      </ul>
+
+      </div>
+    <div class="posts">
+    <p  id="title" >please leave us a memory</p>
+    <a  id="create" href="{% url 'post:create'%}">+</a>
+    <div class="newpost">
+    {% for post in posts%}
+    <div class="postcontent">
+      <div class="sent">
+    <p class='meggase'><a class="aboutlink" href="{% url 'post:detail' pk=post.pk %}">{{post.massage}}</a></p>
+    <p class="strs">rated:{{post.stars.rate}}</p>
+    </div>
+    <div class="about">
+    <p class="name">by:{{post.author.first_name}}</p>
+    <p class="stat">status:{{post.group}}</p>
+    <p class='socity'>socity:{{post.to.socity}}</p>
+    <div class="cover-bar"></div>
+    </div>
+    </div>
+    {% endfor %}
+
+      </div>
+    </div>
+  </body>
+
+  </script>
+</html>
